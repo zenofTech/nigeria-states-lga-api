@@ -28,14 +28,14 @@ A lightweight REST API providing all Nigerian states, Local Government Areas (LG
 
 ### 1. Get all countries
 
-```
+```bash
 GET /api/v1/location/countries
 
 ```
 
 **Response:**
 
-```
+```bash
 {
   "data": [
     { "id": 1, "name": "Nigeria", "code": "NG" },
@@ -47,14 +47,14 @@ GET /api/v1/location/countries
 
 ### 2. Get all Nigerian states
 
-```
+```bash
 GET /api/v1/location/states
 
 ```
 
 **Response:**
 
-```
+```bash
 {
   "data": [
     { "id": 1, "name": "Lagos", "country_id": 1 },
@@ -66,14 +66,14 @@ GET /api/v1/location/states
 
 ### 3. Get LGAs by state ID (e.g., Lagos)
 
-```
+```bash
 GET /api/v1/location/lgas/1
 
 ```
 
 **Response:**
 
-```
+```bash
 {
   "data": [
     { "id": 1, "name": "Agege", "state_id": 1 },
@@ -87,15 +87,16 @@ GET /api/v1/location/lgas/1
 
 1. **Clone the repo:**
 
-   ```
-   git clone [https://github.com/zenoftech/nigeria-states-lga-api.git](https://github.com/zenoftech/nigeria-states-lga-api.git)
+   ```bash
+   git clone https://github.com/zenoftech/nigeria-states-lga-api.git
+  
    cd nigeria-states-lga-api
 
    ```
 
 2. **Create and activate a virtual environment:**
 
-   ```
+   ```bash
    python -m venv venv
    # On Windows:
    .\venv\Scripts\activate
@@ -106,15 +107,16 @@ GET /api/v1/location/lgas/1
 
 3. **Install dependencies:**
 
-   ```
+   ```bash
    pip install -r requirements.txt
+   
    # (Ensure requirements.txt contains: fastapi, uvicorn, sqlalchemy, psycopg2-binary, pydantic)
 
    ```
 
 6. **Run the server:**
 
-   ```
+   ```bash
    uvicorn app.main:app --reload
 
    ```
