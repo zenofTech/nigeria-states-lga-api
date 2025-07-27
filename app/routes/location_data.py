@@ -1,7 +1,7 @@
 import re
 from fastapi import APIRouter, HTTPException
 from typing import List
-from models import Country, State, LGA
+from app.models import Country, State, LGA
 
 # Content from the uploaded SQL files (KEEP THESE AS THEY ARE)
 countries_sql_content = """

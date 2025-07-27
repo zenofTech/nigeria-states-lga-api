@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import location_data
+from app.routes import location_data
 
 app = FastAPI(
     title="Location Data API",
