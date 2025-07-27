@@ -88,7 +88,7 @@ GET /api/v1/location/lgas/1
 1. **Clone the repo:**
 
    ```
-   git clone [https://github.com/yourusername/nigeria-states-lga-api.git](https://github.com/yourusername/nigeria-states-lga-api.git)
+   git clone [https://github.com/zenoftech/nigeria-states-lga-api.git](https://github.com/zenoftech/nigeria-states-lga-api.git)
    cd nigeria-states-lga-api
 
    ```
@@ -112,40 +112,6 @@ GET /api/v1/location/lgas/1
 
    ```
 
-4. **Set up your database (PostgreSQL recommended):**
-
-   * Ensure PostgreSQL is running.
-
-   * Update `app/database.py` with your PostgreSQL connection string (or set the `DATABASE_URL` environment variable).
-
-   * Initialize Alembic (if not already done): `alembic init migrations`
-
-   * Configure `migrations/env.py` to point to your `Base.metadata` and `DATABASE_URL`.
-
-   * Generate initial migration: `alembic revision --autogenerate -m "Create initial tables"`
-
-   * Apply migrations: `alembic upgrade head`
-
-5. **Populate your database with the provided data:**
-
-   * Save the corrected `countries.sql`, `states.sql`, and `lgas.sql` files (from our previous conversation) into a `data/` directory in your project root.
-
-   * Import them in order:
-
-     ```
-     psql YOUR_RAILWAY_POSTGRES_CONNECTION_STRING -f data/countries.sql
-     psql YOUR_RAILWAY_POSTGRES_CONNECTION_STRING -f data/states.sql
-     psql YOUR_RAILWAY_POSTGRES_CONNECTION_STRING -f data/lgas.sql
-
-     ```
-
-   * **Crucial for states:** If your `states.sql` didn't include `country_id`, update the `country_id` for Nigerian states after importing:
-
-     ```
-     UPDATE "states" SET "country_id" = (SELECT id FROM "countries" WHERE code = 'NG');
-
-     ```
-
 6. **Run the server:**
 
    ```
@@ -158,17 +124,14 @@ GET /api/v1/location/lgas/1
    API will be live at `http://127.0.0.1:8000`. You can access the interactive API documentation at `http://127.0.0.1:8000/docs`.
 
 ## 🌐 Live Demo
-
-Try the API live: `https://api.example.com/v1/location/states` (Replace `api.example.com` with your actual deployed URL on Railway).
+<!-- 
+Try the API live: `https://api.example.com/v1/location/states` (Replace `api.example.com` with your actual deployed URL on Railway). -->
 
 ## 🤝 Contributing
 
 Contributions are welcome! Open an issue or submit a PR for:
 
 * Additional countries/states.
-
-* Data corrections (e.g., missing LGAs).
-
 * Performance improvements.
 
 ## 📜 License
