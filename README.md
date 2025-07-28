@@ -109,9 +109,6 @@ GET /api/v1/location/lgas/1
 
    ```bash
    pip install -r requirements.txt
-   
-   # (Ensure requirements.txt contains: fastapi, uvicorn, sqlalchemy, psycopg2-binary, pydantic)
-
    ```
 
 6. **Run the server:**
